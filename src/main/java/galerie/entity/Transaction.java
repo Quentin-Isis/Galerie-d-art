@@ -25,4 +25,15 @@ public class Transaction {
     @Column(unique = true)
     @NonNull
     private int prixVente;
+    
+    @ManyToOne
+    @NonNull
+    private Personne acheteur;
+    
+    @ManyToOne
+    @NonNull
+    private Exposition lieuDeVente;
+    
+    @OneToOne
+    private Tableau oeuvre;
 }

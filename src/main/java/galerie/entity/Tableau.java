@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package galerie.entity;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 /**
@@ -33,7 +35,12 @@ public class Tableau {
     @NonNull
     private int hauteur;
     
+    @ManyToMany(mappedBy = "oeuvres")
+    List<Exposition> accrochages = new LinkedList<>();
     
+    @OneToOne(mappedBy = "oeuvre")
+    private Transaction vendu;
     
-    
+   @ManyToOne
+   private Artiste peintre;
 }

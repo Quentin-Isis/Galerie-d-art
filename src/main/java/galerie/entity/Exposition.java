@@ -6,6 +6,8 @@
 package galerie.entity;
 
 import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 /**
@@ -35,4 +37,10 @@ public class Exposition {
     @ManyToOne
     @NonNull
     private Galerie galerie;
+    
+    @ManyToMany
+    List<Tableau> oeuvres = new LinkedList<>();
+    
+    @OneToMany (mappedBy = "lieuDeVente")
+    List<Transaction> ventSuscite = new LinkedList<>();
 }

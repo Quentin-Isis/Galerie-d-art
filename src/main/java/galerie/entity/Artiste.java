@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package galerie.entity;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -15,6 +17,9 @@ import lombok.*;
 
 public class Artiste extends Personne{
     private String biographie;
+    
+    @OneToMany (mappedBy = "peintre")
+    List <Tableau> tableau = new LinkedList<>();
     
     public Artiste(Integer id, String nom,String adresse, String biographie){
         super(id, nom, adresse);

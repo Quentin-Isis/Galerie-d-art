@@ -1,4 +1,6 @@
 package galerie.entity;
+import java.util.LinkedList;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 // Un exemple d'entité
@@ -19,6 +21,6 @@ public class Galerie {
     private String adresse;
     
     @OneToMany (mappedBy = "galerie")
-    private Exposition exposition;
+    List<Exposition> evenement = new LinkedList<>();
     
 }
