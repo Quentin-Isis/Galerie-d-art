@@ -29,9 +29,9 @@ public class ExpositionRepositoryTest {
     
     public void onSaitCompterLesEnregistrements() {
         log.info("On compte les enregistrements de la table 'Exposition'");
-        int combienDansLeJeuDeTest = 1; 
+        int combienDansLeJeuDeTest = 2; 
         long nombre = expositionDAO.count();
-        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 1 exposition" );
+        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 exposition" );
     
     }
 

@@ -23,8 +23,8 @@ public interface ExpositionRepository extends JpaRepository <Exposition , Intege
      */
     @Query (value =
                     "SELECT SUM(prixVente) as chiffreAffairePour" +
-                    "INNER JOIN Transaction ON Exposition_id = Transaction_id" +
-                    "WHERE Transaction_id = :id ",
+                    "INNER JOIN Vente ON Exposition_id = Vente_id" +
+                    "WHERE Vente_id = :id ",
             nativeQuery = true)
     float chiffreAffairePourSQL(Integer id);
     

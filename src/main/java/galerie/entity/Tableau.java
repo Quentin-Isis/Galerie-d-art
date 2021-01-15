@@ -39,7 +39,7 @@ public class Tableau {
     List<Exposition> accrochages = new LinkedList<>();
     
     @OneToOne(mappedBy = "oeuvre")
-    private Transaction vendu;
+    private Vente vendu;
     
    @ManyToOne
    private Artiste peintre;

@@ -16,9 +16,5 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PersonneRepository extends JpaRepository <Personne , Integer> {
     
-    /**
-     * Calculer le budget d'art d'une personne pour une année
-     * @param id la clé primaire de la personne
-     * @return le budget d'art de cette personne
-     */
+    
 }

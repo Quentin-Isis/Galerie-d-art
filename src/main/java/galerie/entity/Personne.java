@@ -30,7 +30,7 @@ public class Personne {
     
     @OneToMany (mappedBy = "acheteur")
     @NonNull
-    List<Transaction> transaction = new LinkedList<>();
+    List<Vente> vente = new LinkedList<>();
     
     public Personne(Integer id, String nom, String adresse){
         this.id=id;

@@ -24,7 +24,7 @@ public class Exposition {
     @Column(unique=true)
     @NonNull
     @ToString.Exclude
-    private LocalDate date;
+    private LocalDate datexpo;
     
     @Column(unique=true)
     @NonNull
@@ -42,5 +42,5 @@ public class Exposition {
     List<Tableau> oeuvres = new LinkedList<>();
     
     @OneToMany (mappedBy = "lieuDeVente")
-    List<Transaction> ventSuscite = new LinkedList<>();
+    List<Vente> ventSuscite = new LinkedList<>();
 }
