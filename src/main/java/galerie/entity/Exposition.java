@@ -42,5 +42,13 @@ public class Exposition {
     List<Tableau> oeuvres = new LinkedList<>();
     
     @OneToMany (mappedBy = "lieuDeVente")
-    List<Vente> ventSuscite = new LinkedList<>();
+    List<Transactions> ventesSuscite = new LinkedList<>();
+    
+    public float CA(){
+        float CA = 0;
+        for (Transactions t : ventesSuscite){
+            CA += t.getPrixVente();
+        }
+        return CA;
+    }
 }

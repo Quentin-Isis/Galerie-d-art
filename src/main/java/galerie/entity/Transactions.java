@@ -13,7 +13,7 @@ import lombok.*;
  */
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity
-public class Vente {
+public class Transactions {
     
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;

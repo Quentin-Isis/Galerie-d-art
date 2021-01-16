@@ -13,9 +13,12 @@ import lombok.*;
  *
  * @author QUENTIN
  */
-@Entity @ToString(callSuper = true) @NoArgsConstructor
+@Entity @ToString(callSuper = true) @NoArgsConstructor @Getter @Setter
 
 public class Artiste extends Personne{
+    
+    @Column(unique=true)
+    @NonNull
     private String biographie;
     
     @OneToMany (mappedBy = "peintre")

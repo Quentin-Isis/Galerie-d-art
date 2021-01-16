@@ -31,7 +31,7 @@ public class Personne {
     
     @OneToMany (mappedBy = "acheteur")
     @NonNull
-    List<Vente> vente = new LinkedList<>();
+    List<Transactions> transactions = new LinkedList<>();
     
     public Personne(Integer id, String nom, String adresse){
         this.id=id;
@@ -41,12 +41,11 @@ public class Personne {
     
     public float budgetArt (int annee){
         float budget = 0;
-        for (Vente v : vente){
-            if (v.getvenduLe() year = annee)
-             
-        }
-        return budget;
+        for (Transactions t : transactions){
+            if (t.getVenduLe().getYear() == annee){
+                budget += t.getPrixVente();
+        }       
     }
-        
-    
+        return budget;
+    }   
 }

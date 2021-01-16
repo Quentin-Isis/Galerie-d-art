@@ -23,4 +23,13 @@ public class Galerie {
     @OneToMany (mappedBy = "galerie")
     List<Exposition> evenement = new LinkedList<>();
     
+    public float CAannuel (int annee){
+        float CAannuel =0;
+        for (Exposition e : evenement)
+            if (e.getDatexpo().getYear() == annee) {
+                CAannuel += e.CA();
+            }
+        return CAannuel;
+    }
+    
 }
