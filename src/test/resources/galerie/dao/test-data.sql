@@ -1,4 +1,5 @@
 -- Initialisation spécifiques pour un jeu de test
+
 INSERT INTO Galerie(id, nom, adresse) VALUES (1, 'Saatchi', 'King\''s Road, Londres');
 INSERT INTO Galerie(id, nom, adresse) VALUES (2, 'Paris', '2 avenue des Capucines, Paris');
 
@@ -15,5 +16,5 @@ INSERT INTO Tableau(id,titre,support,largeur,hauteur,arstiste_id) VALUES (2,'ori
 
 INSERT INTO Exposition_Oeuvres(exposition_id,oeuvres_id) VALUES (2,1);
 
-INSERT INTO Transactions(id,venduLe,prixVente,acheteur_id,oeuvre_id) VALUES (1,TO DATE ('2019/07/28','YYYY/MM/DD'),1200,1,1);
-INSERT INTO Transactions(id,venduLe,prixVente,acheteur_id,oeuvre_id) VALUES (1,TO DATE ('2020/09/21','YYYY/MM/DD'),50002,2);
+INSERT INTO Transactions(id,venduLe,prixVente,acheteur_id,oeuvre_id) VALUES (1,TO DATE ('2019/07/28','YYYY/MM/DD'),1200,2,2,1);
+INSERT INTO Transactions(id,venduLe,prixVente,acheteur_id,lieuDeVente_id,oeuvre_id) VALUES (1,TO DATE ('2020/09/21','YYYY/MM/DD'),50002,1,1,2);

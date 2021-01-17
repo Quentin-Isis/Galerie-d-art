@@ -15,6 +15,9 @@ import galerie.entity.Personne;
 import org.springframework.data.jpa.repository.Query;
 
 public interface PersonneRepository extends JpaRepository <Personne , Integer> {
-    
-    
+   public void testBudget(){
+    float budget = 1200;
+    Personne p = new Personne();
+    assertEquals(budget,p.budgetArt(2019),"On doit trouver un budget de 1200 euros");
+   }
 }
