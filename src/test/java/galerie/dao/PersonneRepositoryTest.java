@@ -34,5 +34,15 @@ public class PersonneRepositoryTest {
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 personnes" );
     }
     
+    @Test
+    @Sql("test-data.sql")
+    public void testBudgetArt() {
+        log.info("Test budget art");
+        float resultatAttendu = 51202;
+        Personne personne = personneDAO.getOne(1);
+        float resultat = personne.budgetArt(2020);
+        assertEquals(resultatAttendu, resultat, "Les résultats ne sont pas identiques.");
+    }
+    
 
 }

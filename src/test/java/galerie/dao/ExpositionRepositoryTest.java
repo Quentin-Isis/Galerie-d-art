@@ -34,5 +34,24 @@ public class ExpositionRepositoryTest {
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 expositions" );
     
     }
+    
+    @Test
+    @Sql("test-data.sql")
+    public void testCA() {
+        log.info("Test budget art");
+        float resultatAttendu = 50002;
+        Exposition exposition = expositionDAO.getOne(1);
+        float resultat = exposition.CA();
+        assertEquals(resultatAttendu, resultat, "Les résultats ne sont pas identiques.");
+    }
+    
+    @Test
+    @Sql("test-data.sql")
+    public void testCAWithSql() {
+        log.info("Test budget art");
+        float resultatAttendu = 50002;
+        float resultat = expositionDAO.chiffreAffairePourSQL(1);
+        assertEquals(resultatAttendu, resultat, "Les résultats ne sont pas identiques.");
+    }
 
 }

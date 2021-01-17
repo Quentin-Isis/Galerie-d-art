@@ -27,5 +27,15 @@ public class GalerieRepositoryTest {
         long nombre = galerieDAO.count();
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 galerie" );
     }
+    
+    @Test
+    @Sql("test-data.sql")
+    public void testCAAnnuel() {
+        log.info("Test budget art");
+        float resultatAttendu = 50002;
+        Galerie galerie = galerieDAO.getOne(1);
+        float resultat = galerie.CAannuel(2020);
+        assertEquals(resultatAttendu, resultat, "Les résultats ne sont pas identiques.");
+    }
 
 }
